@@ -1,19 +1,19 @@
-.centerBox{
+.centerBox {
     margin: auto;
-width: 40%;
-padding-top: 5px;
-padding-bottom: 10px;
-border: 5px solid grey;
-margin-top: 5%;
-text-align: center;
-border-radius: 10px;
+    width: 40%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border: 5px solid grey;
+    margin-top: 5%;
+    text-align: center;
+    border-radius: 10px;
 }
 
-.centerBox_title{
+.centerBox_title {
     font-size: 35px;
 }
 
-.input_field{
+.input_field {
     width: 90%;
     font-size: 18px;
     padding: 8px;
@@ -21,7 +21,7 @@ border-radius: 10px;
     border-radius: 10px;
 }
 
-.button{
+.button {
     background-color: green;
     color: white;
     padding: 15px;
@@ -30,3 +30,80 @@ border-radius: 10px;
     border-radius: 10px;
     border: 0px;
 }
+
+.header {
+    height: 450px;
+    width: 100%;
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.8)),  url("../images/bg_image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    z-index: 1;
+}
+
+.header>.navigation>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.header>.navigation>ul>li {
+    display: inline;
+    margin: 20px;
+}
+
+.navigation_button {
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    border: 0px;
+    z-index: 2;
+}
+
+.navigation {
+    padding-top: 25px;
+}
+
+.content{
+    text-align: center;
+    font-size:60px;
+    color: bisque;
+    padding-top: 55px;
+    word-spacing: 20px;
+    font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
+}
+
+.product_heading{
+    text-align: center;
+    font-size: 45px;
+}
+
+.feature{
+    text-align: center;
+    margin: 30px 70px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color:azure;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    width: 0px;
+  }
+
+  .sidenav-show{
+    width: 250px;
+  }
+
+  .showcart{
+    display: none;
+  }

@@ -2,8 +2,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'
 import Registration from './pages/Registration'
-import Booking from './pages/booking'
-import SelectItems from './pages/selectItems';
+import {SelectItems} from './pages/selectItems';
+import AllProducts from './pages/AllProducts'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/selectItems" element={<SelectItems />} />
+          <Route path="/allproducts" element={<AllProducts />} />
         </Routes>
       </BrowserRouter>
   );

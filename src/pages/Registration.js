@@ -1,6 +1,4 @@
 import './index.css';
-import InputBox from '../components/inputBox';
-import ButtonBox from '../components/buttonBox';
 import React from 'react';
 import db from '../config'
 import { useNavigate } from 'react-router-dom';
