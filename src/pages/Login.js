@@ -19,10 +19,11 @@ function Login() {
 
            if (pass == password) {
               console.log("Validate")
+              sessionStorage.setItem("Login_name", userName)
               navigate({
                  pathname: '/selectItems',
                  // search: `?email=${encryptEmail(this.state.email)}`
-                 search: `?name=${userName}`
+               //   search: `?name=${userName}`
               });
            }
            else {

@@ -34,7 +34,7 @@
 .header {
     height: 450px;
     width: 100%;
-    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.8)),  url("../images/bg_image.jpg");
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.8)),  url("../assets/images/bg_image.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,17 +93,137 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background-color:azure;
+    background-color:rgb(246, 248, 248);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     width: 0px;
+    border-left: 2px solid grey;
+    -webkit-box-shadow: -8px 2px 11px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -8px 2px 11px 0px rgba(0,0,0,0.75);
+box-shadow: -8px 2px 11px 0px rgba(0,0,0,0.75);
   }
 
   .sidenav-show{
-    width: 250px;
+    width: 330px;
   }
 
   .showcart{
     display: none;
   }
+
+  .imgfeature{
+    width: 100%;
+    padding: 10px;
+    height: 250px;
+  }
+
+  .buyNowFeature{
+    padding: 3px 5px ;
+  }
+
+  .addToCartbutton{
+    padding: 3px 5px;
+    margin-left: 15px; 
+    background-color: #e60000;
+  }
+
+  .colorblack{
+    color: black;
+  }
+
+  .navigationHeader{
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navigationHeader>.navigation>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.navigationHeader>.navigation>ul>li {
+    display: inline;
+    margin: 20px;
+}
+
+table{
+  width: 330px;
+  border-bottom: 1px solid black;
+  margin: 5px 0px;
+}
+
+.horizontalline{
+  border: 2px solid black;
+}
+
+.closebtn{
+  font-size: 25px;
+  margin-bottom: 5px;
+  color: blueviolet;
+}
+
+.sideitemdel{
+  color: #e60000;
+  font-size: 0px;
+  
+}
+
+table:hover .sideitemdel{
+  font-size: 23px;
+}
+
+table:hover{
+  padding: 3px;
+}
+
+.totalbox{
+  position:absolute;
+  bottom:0;
+  font-size: 20px;
+}
+
+.detailbox{
+  padding: 80px 150px 50px 70px;
+}
+
+.productimg{
+  padding: 10px;
+}
+
+.productdetail{
+  padding: 10px;
+}
+
+.productimg{
+
+  width: 350px;
+  height: 400px;
+  padding:10px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+ 
+}
+
+.checkout{
+  right:0;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  margin-left: 20px;
+}
+
+.checkbox{
+  text-align: center;
+}
+
+.checkdisplay{
+  display: flex;
+justify-content: center;
+margin-top: 20px;
+}
