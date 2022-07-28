@@ -17,7 +17,10 @@ export function SelectItems() {
 
   useEffect(()=>{
     var user= sessionStorage.getItem("Login_name");
-
+    console.log("logon user",user)
+    if(user==0){
+      navigate('/')
+    }
     let list = JSON.parse(localStorage.getItem(user))
     if(list!= null){setItems(list)}
   }, [])
@@ -59,6 +62,11 @@ export function SelectItems() {
  function details(code){
     navigate('/ProductDetail',{state:{Code : code}});
   }
+
+  function logout(){
+    sessionStorage.setItem("Login_name", "0")
+    navigate('/')
+  }
  
   return (
     <div className='main'>
@@ -71,6 +79,7 @@ export function SelectItems() {
             <li><button className='navigation_button'onClick={()=>navigate('/allproducts')}>Products</button></li>
             <li><button className='navigation_button' onClick={showSideNav}>Cart<sup style={{ backgroundColor: "red", color: "white", padding: "0px 4px", borderRadius: "10px" }}>{cartItems.length}</sup></button></li>
             <li><button className='navigation_button' onClick={()=>navigate('/checkout')}>Check out</button></li>
+            <li><button className='navigation_button' onClick={()=>logout()}>Logout</button></li>
           </ul>
         </div>
         <div className='content'>

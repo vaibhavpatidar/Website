@@ -16,6 +16,9 @@ function CheckOut() {
 
     useEffect(() => {
         let user = sessionStorage.getItem("Login_name");
+        if (user == 0) {
+            navigate('/')
+        }
         let list = JSON.parse(localStorage.getItem(user))
         if (list != null) { setItems(list) }
     }, [])
@@ -50,15 +53,12 @@ function CheckOut() {
         setItems(cartItems)
     }
 
-    function showSideNav() {
-        if (sideNav == 0) {
-            setSideNav(1);
-        }
-        else {
-            setSideNav(0);
-        }
-    }
 
+
+    function logout() {
+        sessionStorage.setItem("Login_name", "0")
+        navigate('/')
+    }
 
     let res = 0;
     return (
@@ -70,6 +70,8 @@ function CheckOut() {
                         <li><button className='navigation_button colorblack' onClick={() => navigate('/selectItems')}>Home</button></li>
                         <li><button className='navigation_button colorblack'>About</button></li>
                         <li><button className='navigation_button colorblack' onClick={() => navigate('/allproducts')}>Products</button></li>
+                        <li><button className='navigation_button colorblack' onClick={() => logout()}>Logout</button></li>
+
                     </ul>
                 </div>
             </div>
@@ -100,7 +102,7 @@ function CheckOut() {
                 )
             })}
             <div>Total : {res}
-                
+
             </div>
         </div>
 

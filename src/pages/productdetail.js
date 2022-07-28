@@ -26,6 +26,9 @@ function ProductDetail() {
 
     useEffect(() => {
         var user = sessionStorage.getItem("Login_name");
+        if (user == 0) {
+            navigate('/')
+        }
         let list = JSON.parse(localStorage.getItem(user))
         if (list != null) { console.log(list); setItems(list); }
     }, [])
@@ -54,7 +57,10 @@ function ProductDetail() {
     }
     let navigate = useNavigate()
 
-
+    function logout() {
+        sessionStorage.setItem("Login_name", "0")
+        navigate('/')
+    }
 
     return (
         <div className=''>
@@ -66,7 +72,8 @@ function ProductDetail() {
                         <li><button className='navigation_button colorblack'>About</button></li>
                         <li><button className='navigation_button colorblack' onClick={() => navigate('/allproducts')}>Products</button></li>
                         <li><button className='navigation_button colorblack' onClick={showSideNav}>Cart<sup style={{ backgroundColor: "red", color: "white", padding: "0px 4px", borderRadius: "10px" }}>{cartItems.length}</sup></button></li>
-                        <li><button className='navigation_button colorblack' onClick={()=>navigate('/checkout')}>Check out</button></li>
+                        <li><button className='navigation_button colorblack' onClick={() => navigate('/checkout')}>Check out</button></li>
+                        <li><button className='navigation_button colorblack' onClick={() => logout()}>Logout</button></li>
                     </ul>
                 </div>
 

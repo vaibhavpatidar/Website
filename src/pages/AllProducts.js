@@ -13,6 +13,9 @@ function AllProducts() {
     const [sideNav, setSideNav] = useState(1);
 
     let user= sessionStorage.getItem("Login_name");
+    if(user==0){
+      navigate('/')
+    }
     function AddCart(code, name, price, img) {
         let index = cartItems.findIndex(x => x.Code === code);
       
@@ -49,6 +52,10 @@ function AllProducts() {
         if(list!= null){setItems(list)}
       }, [])
     
+      function logout(){
+        sessionStorage.setItem("Login_name", "0")
+        navigate('/')
+      }
 
     return (
         <div className=''>
@@ -61,6 +68,7 @@ function AllProducts() {
                     <li><button className='navigation_button colorblack' onClick={() => navigate('/allproducts')}>Products</button></li>
                     <li><button className='navigation_button colorblack' onClick={showSideNav}>Cart<sup style={{ backgroundColor: "red", color: "white", padding: "0px 4px", borderRadius: "10px" }}>{cartItems.length}</sup></button></li>
                     <li><button className='navigation_button colorblack' onClick={()=>navigate('/checkout')}>Check out</button></li>
+                    <li><button className='navigation_button colorblack' onClick={()=>logout()}>Logout</button></li>
                 </ul>
             </div>
         </div>
